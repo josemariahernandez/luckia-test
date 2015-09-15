@@ -1,0 +1,11 @@
+user:
+  android: "medianet.luckia:id/edit_user"
+  ios: ""
+
+pass:
+  android: "medianet.luckia:id/edit_password"
+  ios: ""
+
+sign_in:
+  android: "medianet.luckia:id/button_login"
+  ios: ""

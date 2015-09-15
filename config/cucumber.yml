@@ -1,0 +1,4 @@
+<% common_path = "-r features/support/env.rb -r code -r features/support -r features/step_definitions" %>
+
+ios-appium: ENV=ios <%= common_path %>
+android-appium: ENV=android <%= common_path %>
