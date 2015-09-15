@@ -1,4 +1,5 @@
 Given(/^I am about to login$/) do
+  @page = @page.homePage
   @page = @page.login
 end
 

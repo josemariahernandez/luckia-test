@@ -1,3 +1,3 @@
 Before do
-  @page = HomePage.new(ENV['ENV'])
+  @page = Pages.new(ENV['ENV'])
 end
