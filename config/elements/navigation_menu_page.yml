@@ -1,0 +1,49 @@
+back_home:
+  id:
+    android: "medianet.luckia:id/drawer_title"
+    ios: ""
+
+apuestas:
+  id:
+    android: "medianet.luckia:id/apuestas"
+    ios:
+
+caballos:
+  id:
+    android: "medianet.luckia:id/carreras_caballos"
+    ios: ""
+
+ruleta:
+  id:
+    android: "medianet.luckia:id/carreras_ruleta"
+    ios: ""
+
+porra:
+  id:
+    android: "medianet.luckia:id/carreras_porras"
+    ios: ""
+
+luckiapuesta:
+  id:
+    android: "medianet.luckia:id/luckiapuesta"
+    ios: ""
+
+promociones:
+  id:
+    android: "medianet.luckia:id/promos"
+    ios: ""
+
+locales:
+  id:
+    android: "medianet.luckia:id/locales"
+    ios: ""
+
+blog:
+  id:
+    android: "medianet.luckia:id/blog"
+    ios: ""
+
+faq:
+  id:
+    android: "medianet.luckia:id/faq"
+    ios: ""

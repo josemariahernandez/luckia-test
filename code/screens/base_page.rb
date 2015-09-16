@@ -8,22 +8,22 @@ class BasePage
 
   def waitUntil(element)
     wait = Selenium::WebDriver::Wait.new :timeout => 10
-    wait.until { find_element(:id, @list_of_elements[element][@env]).displayed? }
+    wait.until { find_element(:id, @list_of_elements[element]['id'][@env]).displayed? }
   end
 
   def press(element)
     waitUntil(element)
-    find_element(:id,@list_of_elements[element][@env]).click
+    find_element(:id,@list_of_elements[element]['id'][@env]).click
   end
 
   def fill(element, text)
     press(element)
-    find_element(:id, @list_of_elements[element][@env]).send_keys(text)
+    find_element(:id, @list_of_elements[element]['id'][@env]).send_keys(text)
   end
 
   def exists?(element)
     waitUntil(element)
-    exists { find_element(:id, @list_of_elements[element][@env]) }
+    exists { find_element(:id, @list_of_elements[element]['id'][@env]) }
   end
 
   def elements(file)

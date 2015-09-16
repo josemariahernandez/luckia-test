@@ -6,6 +6,6 @@ class UserHomePage < HomePage
   end
 
   def pageExists?
-    fail 'Don\'t be at user home page' unless exists?('name')
+    fail 'Don\'t be at user home page' unless exists?('account_name')
   end
 end

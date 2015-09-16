@@ -1,3 +1,19 @@
-name:
-  android: "medianet.luckia:id/account_name"
-  ios: ""
+deposit:
+  id:
+    android: "medianet.luckia:id/button_depositar"
+    ios: ""
+
+account_name:
+  id:
+    android : "medianet.luckia:id/account_name"
+    ios: ""
+
+account_balance:
+  id:
+    android: "medianet.luckia:id/account_balance"
+    ios: ""
+
+profile_menu:
+  id:
+    android: "medianet.luckia:id/profile_drawer_icon"
+    ios: ""
