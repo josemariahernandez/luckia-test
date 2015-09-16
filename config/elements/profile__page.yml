@@ -1,0 +1,64 @@
+current_pass:
+  id:
+    android: "medianet.luckia:id/fragment_profile_current_pass_et"
+    ios: ""
+
+new_pass:
+  id:
+    android: "imedianet.luckia:id/fragment_profile_new_pass_et"
+    ios: ""
+
+confirm_new_pass:
+  id:
+    android: "imedianet.luckia:id/fragment_profile_confirm_pass_et"
+    ios: ""
+
+change_pass:
+  id:
+    android: "medianet.luckia:id/fragment_profile_change_pass"
+    ios: ""
+
+email:
+  id:
+    android: "medianet.luckia:id/fragment_profile_email_et"
+    ios: ""
+
+confirm_email:
+  id:
+    android: "medianet.luckia:id/fragment_profile_confirm_email_et"
+    ios: ""
+
+phone_number:
+  id:
+    android: "medianet.luckia:id/fragment_profile_phone_et"
+    ios: ""
+
+address:
+  id:
+    android: "medianet.luckia:id/fragment_profile_address_et"
+    ios: ""
+
+postal_code:
+  id:
+    android: "medianet.luckia:id/fragment_profile_postal_code_et"
+    ios: ""
+
+get_prizes:
+  id:
+    android: "medianet.luckia:id/fragment_profile_get_prize_check"
+    ios: ""
+
+get_offers:
+  id:
+    android: "medianet.luckia:id/fragment_profile_get_offers_check"
+    ios: ""
+
+modify_data:
+  id:
+    android: "medianet.luckia:id/fragment_profile_change_data"
+    ios: ""
+
+city:
+  id:
+    android: "medianet.luckia:id/fragment_profile_city_et"
+    ios: ""

@@ -1,11 +1,24 @@
 user:
-  android: "medianet.luckia:id/edit_user"
-  ios: ""
+  id:
+    android: "medianet.luckia:id/edit_user"
+    ios: ""
 
 pass:
-  android: "medianet.luckia:id/edit_password"
-  ios: ""
+  id:
+    android: "medianet.luckia:id/edit_password"
+    ios: ""
 
 sign_in:
-  android: "medianet.luckia:id/button_login"
-  ios: ""
+  id:
+    android: "medianet.luckia:id/button_login"
+    ios: ""
+
+back:
+  id:
+    android: "medianet.luckia:id/continue_unlogged"
+    ios: ""
+
+forgotten_pass:
+  id:
+    android: "medianet.luckia:id/continue_unlogged" 
+    ios: ""

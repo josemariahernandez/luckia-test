@@ -1,3 +1,14 @@
 enter:
-  android: "medianet.luckia:id/login_toolbar"
-  ios: ""
+  id:
+    android: "medianet.luckia:id/login_toolbar"
+    ios: ""
+
+register:
+  id:
+    android: "medianet.luckia:id/register_toolbar"
+    ios: ""
+
+navigation-menu:
+  class:
+    android: "android.widget.ImageButton"
+    ios: ""

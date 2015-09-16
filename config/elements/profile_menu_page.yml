@@ -1,0 +1,49 @@
+depositar:
+  id:
+    android: "medianet.luckia:id/depositar"
+    ios:
+
+historial_apuestas:
+  id:
+    android: "medianet.luckia:id/historial_apuestas"
+    ios:
+
+bonos:
+  id:
+    android: "medianet.luckia:id/bonos"
+    ios:
+
+mis_jugadass:
+  id:
+    android: "medianet.luckia:id/mis_jugadas"
+    ios:
+
+movimientos:
+  id:
+    android: "medianet.luckia:id/movimientos"
+    ios:
+
+limites:
+  id:
+    android: "medianet.luckia:id/limites"
+    ios:
+
+retirar:
+  id:
+    android: "medianet.luckia:id/retirar"
+    ios:
+
+autoexclusion:
+  id:
+    android: "medianet.luckia:id/autoex"
+    ios:
+
+perfil:
+  id:
+    android: "medianet.luckia:id/perfil"
+    ios:
+
+salir:
+  id:
+    android: "medianet.luckia:id/salir"
+    ios:
