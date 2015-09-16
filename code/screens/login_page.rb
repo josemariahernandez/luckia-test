@@ -1,5 +1,6 @@
 class LoginPage < BasePage
   def initialize(env)
+    super(env)
     @env = env
     elements 'login_page'
   end
@@ -8,6 +9,6 @@ class LoginPage < BasePage
     fill('user', user)
     fill('pass', pass)
     press('sign_in')
-    UserHomePage.new(@platform, @env)
+    UserHomePage.new(@env)
   end
 end

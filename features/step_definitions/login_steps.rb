@@ -11,5 +11,5 @@ When(/^I enter valid credentials$/) do
 end
 
 Then(/^I can see my name in the page$/) do
-
+  @page.pageExists?
 end
