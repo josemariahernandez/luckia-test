@@ -6,9 +6,12 @@ class LoginPage < BasePage
   end
 
   def enter_credentials(user, pass)
-    fill('user', user)
-    fill('pass', pass)
-    press('sign_in')
-    UserHomePage.new(@env)
+    fill(:id, 'user', user)
+    fill(:id, 'pass', pass)
+    press(:id, 'sign_in')
+  end
+
+  def error_message_exists?
+    fail 'Don\'t show error message' unless exists?('error_message')
   end
 end

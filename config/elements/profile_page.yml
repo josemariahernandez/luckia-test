@@ -1,3 +1,8 @@
+scrollable_area:
+  id:
+    android: "medianet.luckia:id/fragment_profile_bigLayout"
+    ios: ""
+    
 current_pass:
   id:
     android: "medianet.luckia:id/fragment_profile_current_pass_et"
