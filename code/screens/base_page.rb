@@ -15,12 +15,12 @@ class BasePage
 
   def press(by, element)
     waitUntil(by, element)
-    find_element(by, @list_of_elements[element][by.to_s][@env]).click
+    slideScreenToElement(:class, 'android.widget.ScrollView', 'UP',  by, @list_of_elements[element][by.to_s][@env]).click
   end
 
   def fill(by, element, text)
     press(by, element)
-    find_element(by, @list_of_elements[element][by.to_s][@env]).send_keys(text)
+    slideScreenToElement(:class, 'android.widget.ScrollView', 'UP',  by, @list_of_elements[element][by.to_s][@env]).send_keys(text)
   end
 
   def exists?(by, element)
@@ -30,7 +30,7 @@ class BasePage
 
   def getText(by, element)
     waitUntil(by, element)
-    find_element(by, @list_of_elements[element][by.to_s][@env]).text
+    slideScreenToElement(:class, 'android.widget.ScrollView', 'UP',  by, @list_of_elements[element][by.to_s][@env]).itext
   end
 
   def slideScreen(element, direction, times)
