@@ -1,3 +1,4 @@
+
 class UserHomePage < HomePage
   def initialize(env)
     super(env)

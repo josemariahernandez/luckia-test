@@ -22,4 +22,12 @@ class ProfilePage < BasePage
     current_unmodifiable_information['fiscal_address'] = getText(:id, 'fiscal_address')
     return current_unmodifiable_information
   end
+
+  
+  def enter_email(valor)
+    slideScreenToElement('scrollable_area', 'UP', 'email')
+    fill('email', valor)
+  end
 end
+
+

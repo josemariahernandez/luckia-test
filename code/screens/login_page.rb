@@ -10,4 +10,8 @@ class LoginPage < BasePage
     fill(:id, 'pass', pass)
     press(:id, 'sign_in')
   end
+
+  def error_message_exists?
+    fail 'Don\'t show error message' unless exists?('error_message')
+  end
 end

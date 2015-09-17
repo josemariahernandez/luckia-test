@@ -23,3 +23,16 @@ Given(/^Unmodifiable information displayed is correct$/) do
   fail "trololo" unless expected_unmodifiable_information==current_unmodifiable_information
 end
 
+Given(/^I am at user's profile page$/) do
+  @current.openProfileMenu
+  @current = @page.profileMenuPage
+  @current.goToProfile
+  @current = @page.profilePage
+end
+
+When(/^I change the email and email confirmation$/) do
+  @current.enter_email('prueba')
+end
+
+Then(/^The email will be changed in the user's profile$/) do
+end

@@ -1,3 +1,8 @@
+scrollable_area:
+  id:
+    android: "medianet.luckia:id/fragment_profile_bigLayout"
+    ios: ""
+
 dni:
   id:
     android: "medianet.luckia:id/fragment_profile_dni"

@@ -22,3 +22,8 @@ forgotten_pass:
   id:
     android: "medianet.luckia:id/continue_unlogged" 
     ios: ""
+
+error_message:
+  id:
+    android: "medianet.luckia:id/alertTitle"
+    ios: ""
