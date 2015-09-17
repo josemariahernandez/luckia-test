@@ -5,8 +5,7 @@ class HomePage < BasePage
     elements 'home_page'
   end
 
-  def login
-    press('enter')
-    LoginPage.new(@env)
+  def goToLoginPage
+    press(:id, 'enter')
   end
 end

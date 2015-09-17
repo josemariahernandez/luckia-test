@@ -1,6 +1,6 @@
 [caps]
 platformName = "Android"
-app = "apps/luckia_v046release.apk"
+app = "apps/luckia.apk"
 deviceName = "emulator-5554"
 
 [appium_lib]

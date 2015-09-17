@@ -5,7 +5,11 @@ class UserHomePage < HomePage
     elements 'user_home_page'
   end
 
-  def pageExists?
-    fail 'Don\'t be at user home page' unless exists?('account_name')
+  def pageExists?(username)
+    fail 'Not at user home page' unless exists?(:id, 'account_name')
+  end
+
+  def openProfileMenu
+    press(:id, 'profile_menu')
   end
 end

@@ -6,25 +6,33 @@ class BasePage
     @env = env
   end
 
-  def waitUntil(element)
+  def waitUntil(by, element)
     wait = Selenium::WebDriver::Wait.new :timeout => 10
-    wait.until { find_element(:id, @list_of_elements[element]['id'][@env]).displayed? }
+    puts by
+    puts element
+    wait.until { find_element(by, @list_of_elements[element][by.to_s][@env]).displayed? }
   end
 
-  def press(element)
-    waitUntil(element)
-    find_element(:id,@list_of_elements[element]['id'][@env]).click
+  def press(by, element)
+    waitUntil(by, element)
+    find_element(by, @list_of_elements[element][by.to_s][@env]).click
   end
 
-  def fill(element, text)
-    press(element)
-    find_element(:id, @list_of_elements[element]['id'][@env]).send_keys(text)
+  def fill(by, element, text)
+    press(by, element)
+    find_element(by, @list_of_elements[element][by.to_s][@env]).send_keys(text)
   end
 
-  def exists?(element)
-    waitUntil(element)
-    exists { find_element(:id, @list_of_elements[element]['id'][@env]) }
+  def exists?(by, element)
+    waitUntil(by, element)
+    exists { find_element(by, @list_of_elements[element][by.to_s][@env]) }
   end
+
+  def getText(by, element)
+    waitUntil(by, element)
+    find_element(by, @list_of_elements[element][by.to_s][@env]).text
+  end
+
 
   def elements(file)
     @list_of_elements = YAML.load(File.read("#{File.expand_path File.dirname(__FILE__)}/../../config/elements/#{file}.yml"))
