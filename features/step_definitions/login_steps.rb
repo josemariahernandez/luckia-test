@@ -12,4 +12,10 @@ end
 
 Then(/^I can see my name in the page$/) do
   @page.pageExists?
+  ############################################
+  @page.irMenuDcha
+  @page.irPerfil
+  @page.bajarHasta
+  ############################################
+
 end

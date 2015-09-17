@@ -1,7 +1,7 @@
 Feature: Initial experience
   As a user I want a helpful and simple initial
   experience with the app. I should be able to get help
-  and login to an existing WordPress site.
+  and login to an existing Luckia site.
 
   Scenario: Login
     Given I am about to login
