@@ -7,19 +7,6 @@ end
 Given(/^I enter valid credentials$/) do
   user = CREDENTIALS[:valid_user]
   @current.enter_credentials(user[:username],
-<<<<<<< HEAD
-<<<<<<< HEAD
-                             user[:password]
-  )
-  @current = @page.userHomePage
-end
-
-Then(/^I can see my name in the page$/) do
-  @current.pageExists?
-=======
-                             user[:password])
-  @current = @page.userHomePage
-=======
                              user[:password])
   @current = @page.userHomePage
 end
@@ -27,13 +14,6 @@ end
 Given(/^I can see my name in the page$/) do
   user = CREDENTIALS[:valid_user]
   @current.pageExists?(user[:username])
->>>>>>> bf7b5da6b6bc016460ee70aa950a4e78478bd3aa
-end
-
-Given(/^I can see my name in the page$/) do
-  user = CREDENTIALS[:valid_user]
-  @current.pageExists?(user[:username])
->>>>>>> bf7b5da6b6bc016460ee70aa950a4e78478bd3aa
 end
 
 When(/^I enter invalid credentials$/) do

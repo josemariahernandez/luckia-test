@@ -1,10 +1,8 @@
-<<<<<<< HEAD:config/elements/profile_page.yml
 scrollable_area:
   id:
     android: "medianet.luckia:id/fragment_profile_bigLayout"
     ios: ""
-    
-=======
+
 dni:
   id:
     android: "medianet.luckia:id/fragment_profile_dni"
@@ -50,7 +48,6 @@ fiscal_address:
     android: "medianet.luckia:id/fragment_profile_residence"
     ios: ""
 
->>>>>>> bf7b5da6b6bc016460ee70aa950a4e78478bd3aa:config/elements/profile_page.yml
 current_pass:
   id:
     android: "medianet.luckia:id/fragment_profile_current_pass_et"
