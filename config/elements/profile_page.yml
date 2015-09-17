@@ -1,8 +1,56 @@
+<<<<<<< HEAD:config/elements/profile_page.yml
 scrollable_area:
   id:
     android: "medianet.luckia:id/fragment_profile_bigLayout"
     ios: ""
     
+=======
+dni:
+  id:
+    android: "medianet.luckia:id/fragment_profile_dni"
+    ios: ""
+
+user_name:
+  id:
+    android: "medianet.luckia:id/fragment_profile_username"
+    ios: ""
+
+real_name:
+  id:
+    android: "medianet.luckia:id/fragment_profile_name"
+    ios: ""
+
+1st_surname:
+  id:
+    android: "medianet.luckia:id/fragment_profile_first_surname"
+    ios: ""
+
+2nd_surname:
+  id:
+    android: "medianet.luckia:id/fragment_profile_second_surname"
+    ios: ""
+
+birthday:
+  id:
+    android: "medianet.luckia:id/fragment_profile_born_date"
+    ios: ""
+
+sex:
+  id:
+    android: "medianet.luckia:id/fragment_profile_gender"
+    ios: ""
+
+nacionality:
+  id:
+    android: "medianet.luckia:id/fragment_profile_nacionality"
+    ios: ""
+
+fiscal_address:
+  id:
+    android: "medianet.luckia:id/fragment_profile_residence"
+    ios: ""
+
+>>>>>>> bf7b5da6b6bc016460ee70aa950a4e78478bd3aa:config/elements/profile_page.yml
 current_pass:
   id:
     android: "medianet.luckia:id/fragment_profile_current_pass_et"

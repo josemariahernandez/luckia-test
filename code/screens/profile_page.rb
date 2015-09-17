@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> bf7b5da6b6bc016460ee70aa950a4e78478bd3aa
 class ProfilePage < BasePage
   def initialize(env)
     super(env)
@@ -23,9 +26,13 @@ class ProfilePage < BasePage
     #current_unmodifiable_information['fiscal_address'] = getText(:id, 'fiscal_address')
     return current_unmodifiable_information
   end
+<<<<<<< HEAD
   
   def enter_email(valor)
     slideScreenToElement('scrollable_area', 'UP', 'email')
     fill('email', valor)
   end
 end
+=======
+end
+>>>>>>> bf7b5da6b6bc016460ee70aa950a4e78478bd3aa

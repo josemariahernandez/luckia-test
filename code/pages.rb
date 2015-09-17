@@ -22,4 +22,8 @@ class Pages
   def profilePage
     ProfilePage.new(@env)
   end
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> bf7b5da6b6bc016460ee70aa950a4e78478bd3aa

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 Feature: Personal profile
   As a user I want to check and modify my personal information.
@@ -12,3 +13,13 @@ Feature: Personal profile
     Given I am at user's profile page
     When I change the email and email confirmation
     Then The email will be changed in the user's profile
+=======
+Feature: Personal profile
+  As a user I want to check and modify my personal information.
+  Background:
+    Given I am logged-in
+
+  Scenario: Unmodifiable data is displayed
+    When I am at profile page
+    Then Unmodifiable information displayed is correct
+>>>>>>> bf7b5da6b6bc016460ee70aa950a4e78478bd3aa
