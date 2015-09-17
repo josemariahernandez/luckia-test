@@ -39,14 +39,18 @@ class BasePage
     duration = 2000
 
     times.times do
-      if direction.eql?("RIGHT")
-        swipe(start_x: left, start_y: verticalMidpoint, end_x: right, end_y: verticalMidpoint, duration: duration)
-      elsif direction.eql?("LEFT")
-        swipe(start_x: right, start_y: verticalMidpoint, end_x: left, end_y: verticalMidpoint, duration: duration)
-      elsif direction.eql?("UP")
-        swipe(start_x: horizontalMidpoint, start_y: down, end_x: horizontalMidpoint, end_y: up, duration: duration)
-      elsif direction.eql?("DOWN")
-        swipe(start_x: horizontalMidpoint, start_y: up, end_x: horizontalMidpoint, end_y: down, duration: duration)
+      if direction.eql?('RIGHT')
+        swipe(start_x: left, start_y: verticalMidpoint,
+              end_x: right, end_y: verticalMidpoint, duration: duration)
+      elsif direction.eql?('LEFT')
+        swipe(start_x: right, start_y: verticalMidpoint,
+              end_x: left, end_y: verticalMidpoint, duration: duration)
+      elsif direction.eql?('UP')
+        swipe(start_x: horizontalMidpoint, start_y: down,
+              end_x: horizontalMidpoint, end_y: up, duration: duration)
+      elsif direction.eql?('DOWN')
+        swipe(start_x: horizontalMidpoint, start_y: up,
+              end_x: horizontalMidpoint, end_y: down, duration: duration)
       end
     end
   end
