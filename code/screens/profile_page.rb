@@ -20,6 +20,7 @@ class ProfilePage < BasePage
     current_unmodifiable_information['sex'] = getText(:id, 'sex')
     current_unmodifiable_information['nacionality'] = getText(:id, 'nacionality')
     current_unmodifiable_information['fiscal_address'] = getText(:id, 'fiscal_address')
+    puts current_unmodifiable_information
     return current_unmodifiable_information
   end
 

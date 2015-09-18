@@ -6,35 +6,23 @@ class BasePage
     @env = env
   end
 
-  def waitUntil(by, element)
-    wait = Selenium::WebDriver::Wait.new :timeout => 10
-    begin
-      wait.until { find_element(by, @list_of_elements[element][by.to_s][@env]).displayed? }
-    rescue
-      puts "Element doesn't found"
-      return false
-    end
-    true
-  end
-
   def press(by, element)
-    waitUntil(by, element)
     slideScreenToElement(by, element)
     find_element(by, @list_of_elements[element][by.to_s][@env]).click
   end
 
   def fill(by, element, text)
     press(by, element)
-    slideScreenToElement(by, element)
+    find_element(by, @list_of_elements[element][by.to_s][@env]).clear
     find_element(by, @list_of_elements[element][by.to_s][@env]).send_keys(text)
   end
 
   def exists?(by, element)
-    waitUntil(by, element)
+    # Sets the pre_check wait to the default implicit wait we set at the appium.txt
+    exists(driver_attributes[:default_wait]) { find_element(by, @list_of_elements[element][by.to_s][@env]) }
   end
 
   def getText(by, element)
-    waitUntil(by, element)
     slideScreenToElement(by, element)
     find_Element(by, @list_of_elements[element][by.to_s][@env]).text
   end
@@ -84,26 +72,19 @@ class BasePage
   end
 
   def slideScreenToElement(by, elementToFind)
-    puts by
-    puts elementToFind
-    puts !exists?(by, elementToFind)
-    puts !exists?(:xpath, 'bottom_limit')
     scrollable = find_element(:class, 'android.widget.ScrollView')
 
     points= getSwipePoints(scrollable)
 
     while(!exists?(by, elementToFind) and (!exists?(:xpath, 'bottom_limit')))
-      puts 'while1'
       swipe(start_x: points[:horizontalMidpoint], start_y: points[:bottom],
             end_x: points[:horizontalMidpoint], end_y: points[:verticalMidPoint], duration: 2000)
     end
 
     while(!exists?(by, elementToFind) and (!exists?(:xpath, 'top_limit')))
-      puts 'while2'
       swipe(start_x: points[:horizontalMidpoint], start_y: points[:top],
             end_x: points[:horizontalMidpoint], end_y: points[:verticalMidPoint], duration: 2000)
     end
-    puts '----fuera'
   end
 
   def getSwipePoints(scrollable)

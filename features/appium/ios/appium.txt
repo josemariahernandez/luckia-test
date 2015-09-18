@@ -6,4 +6,5 @@ app = "apps/Workshop-cal.app"
 
 [appium_lib]
 sauce_username = false
-sauce_access_key = false
+sauce_acc00ess_key = false
+wait = 10
