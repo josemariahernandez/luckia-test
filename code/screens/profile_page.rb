@@ -18,16 +18,14 @@ class ProfilePage < BasePage
     current_unmodifiable_information['2nd_surname'] = getText(:id, '2nd_surname')
     current_unmodifiable_information['birthday'] = getText(:id, 'birthday')
     current_unmodifiable_information['sex'] = getText(:id, 'sex')
-    current_unmodifiable_information['nacionality'] = getText(:id, 'nacionality')
+    current_unmodifiable_information['nationality'] = getText(:id, 'nationality')
     current_unmodifiable_information['fiscal_address'] = getText(:id, 'fiscal_address')
-    puts current_unmodifiable_information
     return current_unmodifiable_information
   end
 
   
   def enter_email(valor)
-    slideScreenToElement('scrollable_area', 'UP', 'email')
-    fill('email', valor)
+    fill(:id, 'email', valor)
   end
 end
 

@@ -11,4 +11,4 @@ Feature: Initial experience
   Scenario:Invalid login
     Given I am about to login
     When I enter invalid credentials
-    Then The app will show a error_message
+    Then The app will show an error_message

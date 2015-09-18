@@ -38,9 +38,9 @@ sex:
     android: "medianet.luckia:id/fragment_profile_gender"
     ios: ""
 
-nacionality:
+nationality:
   id:
-    android: "medianet.luckia:id/fragment_profile_nacionality"
+    android: "medianet.luckia:id/fragment_profile_nationality"
     ios: ""
 
 fiscal_address:

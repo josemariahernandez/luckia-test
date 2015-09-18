@@ -18,8 +18,6 @@ end
 Given(/^Unmodifiable information displayed is correct$/) do
   expected_unmodifiable_information = @current.expectedUnmodifiableInformation
   current_unmodifiable_information = @current.currentUnmodifiableInformation
-  puts expected_unmodifiable_information.inspect
-  puts current_unmodifiable_information.inspect
   fail "trololo" unless expected_unmodifiable_information==current_unmodifiable_information
 end
 

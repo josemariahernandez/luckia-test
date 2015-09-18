@@ -24,7 +24,7 @@ class BasePage
 
   def getText(by, element)
     slideScreenToElement(by, element)
-    find_Element(by, @list_of_elements[element][by.to_s][@env]).text
+    find_element(by, @list_of_elements[element][by.to_s][@env]).text
   end
 
   def slideScreen(by, element, direction, times)
