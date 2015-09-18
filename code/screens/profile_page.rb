@@ -25,8 +25,8 @@ class ProfilePage < BasePage
 
   
   def enter_email(valor)
-    slideScreenToElement('scrollable_area', 'UP', 'email')
-    fill('email', valor)
+    slideScreenToElement(:id, 'scrollable_area', 'UP', :id, 'email')
+    fill(:id, 'email', valor)
   end
 end
 

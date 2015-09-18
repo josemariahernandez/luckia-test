@@ -12,6 +12,6 @@ class LoginPage < BasePage
   end
 
   def error_message_exists?
-    fail 'Don\'t show error message' unless exists?('error_message')
+    fail 'Don\'t show error message' unless exists?(:id, 'error_message')
   end
 end

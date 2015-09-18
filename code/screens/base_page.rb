@@ -8,9 +8,12 @@ class BasePage
 
   def waitUntil(by, element)
     wait = Selenium::WebDriver::Wait.new :timeout => 10
-    puts by
-    puts element
-    wait.until { find_element(by, @list_of_elements[element][by.to_s][@env]).displayed? }
+    begin
+      wait.until { find_element(by, @list_of_elements[element][by.to_s][@env]).displayed? }
+    rescue
+      return false
+    end
+    true
   end
 
   def press(by, element)
@@ -74,7 +77,7 @@ class BasePage
     down = el.location.y+(el.size.height/2)-margin
     duration = 2000
 
-    while(!exists { find_element(byToFind, @list_of_elements[elementToFind][byToFind][@env]) })
+    while(!exists { find_element(byToFind, @list_of_elements[elementToFind][byToFind.to_s][@env]) })
       if direction.eql?('RIGHT')
         swipe(start_x: left, start_y: verticalMidpoint,
               end_x: right, end_y: verticalMidpoint, duration: duration)
