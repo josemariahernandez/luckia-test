@@ -112,3 +112,13 @@ city:
   id:
     android: "medianet.luckia:id/fragment_profile_city_et"
     ios: ""
+
+top_limit:
+  xpath:
+    android: "[@id='medianet.luckia:id/fragment_profile_title']"
+    ios: ""
+
+bottom_limit:
+  xpath:
+    android: "[@id='medianet.luckia:id/fragment_profile_change_data']"
+    ios: ""

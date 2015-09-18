@@ -17,3 +17,13 @@ profile_menu:
   id:
     android: "medianet.luckia:id/profile_drawer_icon"
     ios: ""
+
+top_limit:
+  xpath:
+    android: "[@id='medianet.luckia:id/webView_frag']"
+    ios: ""
+
+bottom_limit:
+  xpath:
+    android: "[@id='medianet.luckia:id/locales_icon']"
+    ios: ""

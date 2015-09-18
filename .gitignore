@@ -1,3 +1,4 @@
 **/apps/**
+**/features/support/credentials.rb
 **/features/support/unmodifiable_information.yml
 **/features/support/credentials.rb

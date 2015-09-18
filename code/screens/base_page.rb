@@ -18,49 +18,44 @@ class BasePage
 
   def press(by, element)
     waitUntil(by, element)
+    slideScreenToElement(by, element)
     find_element(by, @list_of_elements[element][by.to_s][@env]).click
   end
 
   def fill(by, element, text)
     press(by, element)
+    slideScreenToElement(by, element)
     find_element(by, @list_of_elements[element][by.to_s][@env]).send_keys(text)
   end
 
   def exists?(by, element)
     waitUntil(by, element)
-    exists { find_element(by, @list_of_elements[element][by.to_s][@env]) }
   end
 
   def getText(by, element)
     waitUntil(by, element)
-    find_element(by, @list_of_elements[element][by.to_s][@env]).text
+    slideScreenToElement(by, element)
+    find_Element(by, @list_of_elements[element][by.to_s][@env]).text
   end
 
   def slideScreen(by, element, direction, times)
     el = find_element(by, @list_of_elements[element][by.to_s][@env])
 
-    horizontalMidpoint = ((el.size.width/2)+el.location.x)
-    verticalMidpoint = ((el.size.height/2)+el.location.y)
-    margin = 1
-    right = el.location.x+el.size.width-margin
-    left = el.location.x+margin
-    up = el.location.y+margin
-    down = el.location.y+el.size.height-margin
-    duration = 2000
+    points= getSwipePoints(scrollable)
 
     times.times do
       if direction.eql?('RIGHT')
-        swipe(start_x: left, start_y: verticalMidpoint,
-              end_x: right, end_y: verticalMidpoint, duration: duration)
+        swipe(start_x: points[:left], start_y: points[:verticalMidpoint],
+              end_x: points[:right], end_y: points[:verticalMidpoint], duration: 2000)
       elsif direction.eql?('LEFT')
-        swipe(start_x: right, start_y: verticalMidpoint,
-              end_x: left, end_y: verticalMidpoint, duration: duration)
+        swipe(start_x: points[:right], start_y: points[:verticalMidpoint],
+              end_x: points[:left], end_y: points[:verticalMidpoint], duration: 2000)
       elsif direction.eql?('UP')
-        swipe(start_x: horizontalMidpoint, start_y: down,
-              end_x: horizontalMidpoint, end_y: up, duration: duration)
+        swipe(start_x: points[:horizontalMidpoint], start_y: points[:bottom],
+              end_x: points[:horizontalMidpoint], end_y: points[:top], duration: 2000)
       elsif direction.eql?('DOWN')
-        swipe(start_x: horizontalMidpoint, start_y: up,
-              end_x: horizontalMidpoint, end_y: down, duration: duration)
+        swipe(start_x: points[:horizontalMidpoint], start_y: points[:top],
+              end_x: points[:horizontalMidpoint], end_y: points[:bottom], duration: 2000)
       end
     end
   end
@@ -68,30 +63,57 @@ class BasePage
   def slideScreenToElement(byToScroll, elementToScroll, direction, byToFind, elementToFind)
     el = find_element(byToScroll, @list_of_elements[elementToScroll][byToScroll.to_s][@env])
 
-    horizontalMidpoint = ((el.size.width/2)+el.location.x)
-    verticalMidpoint = ((el.size.height/2)+el.location.y)
-    margin = 1
-    right = el.location.x+(el.size.width/2)-margin
-    left = el.location.x+margin
-    up = el.location.y+margin
-    down = el.location.y+(el.size.height/2)-margin
-    duration = 2000
+    points= getSwipePoints(scrollable)
 
     while(!exists { find_element(byToFind, @list_of_elements[elementToFind][byToFind.to_s][@env]) })
       if direction.eql?('RIGHT')
-        swipe(start_x: left, start_y: verticalMidpoint,
-              end_x: right, end_y: verticalMidpoint, duration: duration)
+        swipe(start_x: points[:left], start_y: points[:verticalMidpoint],
+              end_x: points[:right], end_y: points[:verticalMidpoint], duration: 2000)
       elsif direction.eql?('LEFT')
-        swipe(start_x: right, start_y: verticalMidpoint,
-              end_x: left, end_y: verticalMidpoint, duration: duration)
+        swipe(start_x: points[:right], start_y: points[:verticalMidpoint],
+              end_x: points[:left], end_y: points[:verticalMidpoint], duration: 2000)
       elsif direction.eql?('UP')
-        swipe(start_x: horizontalMidpoint, start_y: down,
-              end_x: horizontalMidpoint, end_y: up, duration: duration)
+        swipe(start_x: points[:horizontalMidpoint], start_y: points[:bottom],
+              end_x: points[:horizontalMidpoint], end_y: points[:top], duration: 2000)
       elsif direction.eql?('DOWN')
-        swipe(start_x: horizontalMidpoint, start_y: up,
-              end_x: horizontalMidpoint, end_y: down, duration: duration)
+        swipe(start_x: points[:horizontalMidpoint], start_y: points[:top],
+              end_x: points[:horizontalMidpoint], end_y: points[:bottom], duration: 2000)
       end
     end
+  end
+
+  def slideScreenToElement(by, elementToFind)
+    puts by
+    puts elementToFind
+    puts !exists?(by, elementToFind)
+    puts !exists?(:xpath, 'bottom_limit')
+    scrollable = find_element(:class, 'android.widget.ScrollView')
+
+    points= getSwipePoints(scrollable)
+
+    while(!exists?(by, elementToFind) and (!exists?(:xpath, 'bottom_limit')))
+      puts 'while1'
+      swipe(start_x: points[:horizontalMidpoint], start_y: points[:bottom],
+            end_x: points[:horizontalMidpoint], end_y: points[:verticalMidPoint], duration: 2000)
+    end
+
+    while(!exists?(by, elementToFind) and (!exists?(:xpath, 'top_limit')))
+      puts 'while2'
+      swipe(start_x: points[:horizontalMidpoint], start_y: points[:top],
+            end_x: points[:horizontalMidpoint], end_y: points[:verticalMidPoint], duration: 2000)
+    end 
+  end
+
+  def getSwipePoints(scrollable)
+    points = Hash.new
+    margin = 1
+    points[:horizontalMidPoint] = ((scrollable.size.width/2) + scrollable.location.x)
+    points[:verticalMidPoints] = ((scrollable.size.height/2) + scrollable.location.y)
+    points[:right] = scrollable.location.x + scrollable.size.width - margin
+    points[:left] = scrollable.location.x + margin
+    points[:top] = scrollable.location.y + margin
+    points[:bottom] = scrollable.location.y + scrollable.size.height - margin
+    return points
   end
 
   def elements(file)
