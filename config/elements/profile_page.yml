@@ -113,6 +113,11 @@ city:
     android: "medianet.luckia:id/fragment_profile_city_et"
     ios: ""
 
+message:
+  id: 
+    android: "android:id/message"
+    ios: ""
+
 top_limit:
   xpath:
     android: "[@id='medianet.luckia:id/fragment_profile_title']"

@@ -9,5 +9,5 @@ Feature: Personal profile
 
   Scenario: Modify user's email
     Given I am at user's profile page
-    When I change the email and email confirmation
-    Then The email will be changed in the user's profile
+    When I enter an invalid email
+    Then The email won't show a data changes' message

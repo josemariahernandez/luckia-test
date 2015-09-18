@@ -16,7 +16,7 @@ Given(/^I am at profile page$/) do
 end
 
 Given(/^Unmodifiable information displayed is correct$/) do
-  expected_unmodifiable_information = @current.expectedUnmodifiableInformation
+  expected_unmodifiable_information = @current.loadData('unmodifiable_information')
   current_unmodifiable_information = @current.currentUnmodifiableInformation
   #puts expected_unmodifiable_information.inspect
   #puts current_unmodifiable_information.inspect
@@ -30,9 +30,12 @@ Given(/^I am at user's profile page$/) do
   @current = @page.profilePage
 end
 
-When(/^I change the email and email confirmation$/) do
-  @current.enter_email('prueba')
+When(/^I enter an invalid email$/) do
+  email = DATA[:invalid_data]
+  #email = @current.openData('modifiable_information')
+  @current.enter_email(email[:email])
 end
 
-Then(/^The email will be changed in the user's profile$/) do
+Then(/^The email won't show a data changes' message$/) do
+  @current.no_exists_message?
 end

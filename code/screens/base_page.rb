@@ -24,7 +24,7 @@ class BasePage
 
   def fill(by, element, text)
     press(by, element)
-    slideScreenToElement(by, element)
+    find_element(by, @list_of_elements[element][by.to_s][@env]).clear
     find_element(by, @list_of_elements[element][by.to_s][@env]).send_keys(text)
   end
 
@@ -83,24 +83,18 @@ class BasePage
   end
 
   def slideScreenToElement(by, elementToFind)
-    puts by
-    puts elementToFind
-    puts !exists?(by, elementToFind)
-    puts !exists?(:xpath, 'bottom_limit')
     scrollable = find_element(:class, 'android.widget.ScrollView')
 
     points= getSwipePoints(scrollable)
 
     while(!exists?(by, elementToFind) and (!exists?(:xpath, 'bottom_limit')))
-      puts 'while1'
       swipe(start_x: points[:horizontalMidpoint], start_y: points[:bottom],
-            end_x: points[:horizontalMidpoint], end_y: points[:verticalMidPoint], duration: 2000)
+            end_x: points[:horizontalMidpoint], end_y: points[:verticalMidPoint], duration: 1000)
     end
 
     while(!exists?(by, elementToFind) and (!exists?(:xpath, 'top_limit')))
-      puts 'while2'
       swipe(start_x: points[:horizontalMidpoint], start_y: points[:top],
-            end_x: points[:horizontalMidpoint], end_y: points[:verticalMidPoint], duration: 2000)
+            end_x: points[:horizontalMidpoint], end_y: points[:verticalMidPoint], duration: 1000)
     end 
   end
 
