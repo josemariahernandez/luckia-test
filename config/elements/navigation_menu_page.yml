@@ -47,3 +47,13 @@ faq:
   id:
     android: "medianet.luckia:id/faq"
     ios: ""
+
+top_limit:
+  xpath:
+    android: "[@id='medianet.luckia:id/drawer_title']"
+    ios: ""
+
+bottom_limit:
+  class:
+    android: "[@id='medianet.luckia:id/faq']"
+    ios: ""

@@ -47,3 +47,13 @@ salir:
   id:
     android: "medianet.luckia:id/salir"
     ios:
+
+top_limit:
+  xpath:
+    android: "[@id='medianet.luckia:id/account_name']"
+    ios: ""
+
+bottom_limit:
+  xpath:
+    android: "[@id='medianet.luckia:id/salir']"
+    ios: ""
