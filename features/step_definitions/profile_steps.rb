@@ -15,7 +15,7 @@ Given(/^I am at profile page$/) do
   @current = @page.profilePage
 end
 
-Given(/^Unmodifiable information displayed is correct$/) do
+Given(/^unmodifiable information displayed is correct$/) do
   expected_unmodifiable_information = @current.expectedUnmodifiableInformation
   current_unmodifiable_information = @current.currentUnmodifiableInformation
   fail "trololo" unless expected_unmodifiable_information==current_unmodifiable_information
@@ -32,5 +32,5 @@ When(/^I change the email and email confirmation$/) do
   @current.enter_email('prueba')
 end
 
-Then(/^The email will be changed in the user's profile$/) do
+Then(/^the email will be changed in the user's profile$/) do
 end
