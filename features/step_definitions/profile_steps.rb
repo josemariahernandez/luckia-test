@@ -15,11 +15,10 @@ Given(/^I am at profile page$/) do
   @current = @page.profilePage
 end
 
-Given(/^Unmodifiable information displayed is correct$/) do
-  expected_unmodifiable_information = @current.loadData('unmodifiable_information')
+Given(/^unmodifiable information displayed is correct$/) do
+  expected_unmodifiable_information = @current.expectedUnmodifiableInformation
   current_unmodifiable_information = @current.currentUnmodifiableInformation
-  #puts expected_unmodifiable_information.inspect
-  #puts current_unmodifiable_information.inspect
+
   fail "trololo" unless expected_unmodifiable_information==current_unmodifiable_information
 end
 
@@ -36,6 +35,6 @@ When(/^I enter an invalid email$/) do
   @current.enter_email(email[:email])
 end
 
-Then(/^The email won't show a data changes' message$/) do
+Then(/^the email will be changed in the user's profile$/) do
   @current.no_exists_message?
 end

@@ -23,6 +23,6 @@ When(/^I enter invalid credentials$/) do
   )
 end
 
-Then(/^The app will show a error message$/) do
+Then(/^the app shows an error_message$/) do
   @current.error_message_exists?
 end
