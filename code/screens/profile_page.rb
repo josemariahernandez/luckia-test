@@ -36,6 +36,11 @@ class ProfilePage < BasePage
   def no_exists_message?
     fail 'Data can\'t be saved' if exists?(:id, 'message')
   end
+
+  def modify
+    fill_form(MODIFIABLE_DATA[:valid_data])
+    press(:id, modify_data)
+  end
 end
 
 

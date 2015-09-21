@@ -38,3 +38,7 @@ end
 Then(/^the email will be changed in the user's profile$/) do
   @current.no_exists_message?
 end
+
+Given(/^I modify my data$/) do
+  @current.modify
+end

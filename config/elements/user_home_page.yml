@@ -20,10 +20,10 @@ profile_menu:
 
 top_limit:
   xpath:
-    android: "[@id='medianet.luckia:id/webView_frag']"
+    android: "//*[@resource-id='medianet.luckia:id/webView_frag']"
     ios: ""
 
 bottom_limit:
   xpath:
-    android: "[@id='medianet.luckia:id/locales_icon']"
+    android: "//*[@resource-id='medianet.luckia:id/locales_icon']"
     ios: ""

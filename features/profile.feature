@@ -12,6 +12,10 @@ Feature: Personal profile
     When I change the email and email confirmation
     Then the email will be changed in the user's profile
 
+  Scenario: bullshit
+    Given I am at user's profile page
+    Then I modify my data
+
   Scenario: Modify user's email
     Given I am at user's profile page
     When I enter an invalid email

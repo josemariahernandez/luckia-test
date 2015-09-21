@@ -50,10 +50,10 @@ salir:
 
 top_limit:
   xpath:
-    android: "[@id='medianet.luckia:id/account_name']"
+    android: "//*[@resource-id='medianet.luckia:id/account_name']"
     ios: ""
 
 bottom_limit:
   xpath:
-    android: "[@id='medianet.luckia:id/salir']"
+    android: "//*[@resource-id='medianet.luckia:id/salir']"
     ios: ""
