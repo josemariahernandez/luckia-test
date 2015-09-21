@@ -12,9 +12,20 @@ class BasePage
   end
 
   def fill(by, element, text)
-    press(by, element)
-    find_element(by, @list_of_elements[element][by.to_s][@env]).clear
-    find_element(by, @list_of_elements[element][by.to_s][@env]).send_keys(text)
+    slide_screen_to_element(by, element)
+
+    # When we are working with native mobile apps tag_name is the equivalent to class at the web.
+    # We have to perform the slide_screen and click instead than using #press because after click on the list-element the context/focus is set over the list itself and it is not possible to find the list-element again. 
+    # TODO: make the class Spinner change for iOS setting it at launch time via Rakefile/env.rb.
+    # TODO: this works for mobile apps. When working on web we should check that tag_name.eql? 'Select'. However we probably do not need to use the Select.new strategy since the find_element by :text strategy would most probably work as well for web.
+    if(find_element(by, @list_of_elements[element][by.to_s][@env]).tag_name.eql? 'android.widget.Spinner')
+      find_element(by, @list_of_elements[element][by.to_s][@env]).click
+      find_element(:name, text).click
+    elsif
+      find_element(by, @list_of_elements[element][by.to_s][@env]).click
+      find_element(by, @list_of_elements[element][by.to_s][@env]).clear
+      find_element(by, @list_of_elements[element][by.to_s][@env]).send_keys(text)
+    end
   end
 
   def exists?(by, element)
@@ -42,7 +53,7 @@ class BasePage
 
     points= get_swipe_points(scrollable)
 
-    while(!exists { find_element(byToFind, @list_of_elements[elementToFind][byToFind][@env]) })
+    while(!exists?(byToFind, elementToFind))
       eval("#{direction}_half_swipe(points, 2000)")
     end
   end
@@ -52,12 +63,18 @@ class BasePage
 
     points= get_swipe_points(scrollable)
 
-    while(!exists?(by, elementToFind) and (!exists?(:xpath, 'bottom_limit')))
+    while((!exists?(by, elementToFind)) and (!exists?(:xpath, 'bottom_limit')))
       up_half_swipe(points, 2000)
     end
 
-    while(!exists?(by, elementToFind) and (!exists?(:xpath, 'top_limit')))
+    while((!exists?(by, elementToFind)) and (!exists?(:xpath, 'top_limit')))
       down_half_swipe(points, 2000)
+    end
+  end
+
+  def fill_form(values)
+    values.each do |key, value|
+      fill(:id, key.to_s, value)
     end
   end
 

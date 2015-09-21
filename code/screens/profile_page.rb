@@ -23,9 +23,13 @@ class ProfilePage < BasePage
     return current_unmodifiable_information
   end
 
-  
   def enter_email(valor)
     fill(:id, 'email', valor)
+  end
+
+  def modify
+    fill_form(MODIFIABLE_DATA[:valid_data])
+    press(:id, modify_data)
   end
 end
 

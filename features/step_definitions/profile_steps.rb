@@ -34,3 +34,7 @@ end
 
 Then(/^the email will be changed in the user's profile$/) do
 end
+
+Given(/^I modify my data$/) do
+  @current.modify
+end

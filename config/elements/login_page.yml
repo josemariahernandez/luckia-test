@@ -30,10 +30,10 @@ error_message:
 
 top_limit:
   xpath:
-    android: "[@id='medianet.luckia:id/continue_unlogged']"
+    android: "//*[@resource-id='medianet.luckia:id/continue_unlogged']"
     ios: ""
 
 bottom_limit:
   xpath:
-    android: "[@id='medianet.luckia:id/terms_and_conditions']"
+    android: "//*[@resource-id='medianet.luckia:id/terms_and_conditions']"
     ios: ""

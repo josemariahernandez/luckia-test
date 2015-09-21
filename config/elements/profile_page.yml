@@ -83,6 +83,16 @@ phone_number:
     android: "medianet.luckia:id/fragment_profile_phone_et"
     ios: ""
 
+time_zone:
+  id:
+    android: "medianet.luckia:id/fragment_profile_time_zone_spin"
+    ios: ""
+
+modify_nationality:
+  id:
+    android: "medianet.luckia:id/fragment_profile_nationality_spin"
+    ios: ""
+
 address:
   id:
     android: "medianet.luckia:id/fragment_profile_address_et"
@@ -91,6 +101,16 @@ address:
 postal_code:
   id:
     android: "medianet.luckia:id/fragment_profile_postal_code_et"
+    ios: ""
+
+city:
+  id:
+    android: "medianet.luckia:id/fragment_profile_city_et"
+    ios: ""
+
+province:
+  id:
+    android: "medianet.luckia:id/fragment_profile_province_spin"
     ios: ""
 
 get_prizes:
@@ -108,17 +128,12 @@ modify_data:
     android: "medianet.luckia:id/fragment_profile_change_data"
     ios: ""
 
-city:
-  id:
-    android: "medianet.luckia:id/fragment_profile_city_et"
-    ios: ""
-
 top_limit:
   xpath:
-    android: "[@id='medianet.luckia:id/fragment_profile_title']"
+    android: "//*[@resource-id='medianet.luckia:id/fragment_profile_title']"
     ios: ""
 
 bottom_limit:
   xpath:
-    android: "[@id='medianet.luckia:id/fragment_profile_change_data']"
+    android: "//*[@resource-id='medianet.luckia:id/fragment_profile_change_data']"
     ios: ""
