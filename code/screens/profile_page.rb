@@ -5,6 +5,10 @@ class ProfilePage < BasePage
     elements 'profile_page'
   end
   
+  def loadData(file)
+    YAML.load(File.read("#{File.expand_path File.dirname(__FILE__)}/../../features/support/#{file}.yml"))
+  end
+
   def expectedUnmodifiableInformation()
     YAML.load(File.read("#{File.expand_path File.dirname(__FILE__)}/../../features/support/unmodifiable_information.yml"))
   end
@@ -23,8 +27,14 @@ class ProfilePage < BasePage
     return current_unmodifiable_information
   end
 
-  def enter_email(valor)
-    fill(:id, 'email', valor)
+  def enter_email(email)
+    fill(:id, 'email', email)
+    fill(:id, 'confirm_email', email)
+    press(:id, 'modify_data')
+  end
+
+  def no_exists_message?
+    fail 'Data can\'t be saved' if exists?(:id, 'message')
   end
 
   def modify

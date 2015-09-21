@@ -1,7 +1,7 @@
 Feature: Initial experience
   As a user I want a helpful and simple initial
-  experience with the app. I should be able to get help
-  and login to an existing Luckia site.
+  experience with the app. I should be able to get 
+  login to Luckia site.
 
   Scenario: Valid login
     Given I am about to login

@@ -128,6 +128,16 @@ modify_data:
     android: "medianet.luckia:id/fragment_profile_change_data"
     ios: ""
 
+city:
+  id:
+    android: "medianet.luckia:id/fragment_profile_city_et"
+    ios: ""
+
+message:
+  id: 
+    android: "android:id/message"
+    ios: ""
+
 top_limit:
   xpath:
     android: "//*[@resource-id='medianet.luckia:id/fragment_profile_title']"

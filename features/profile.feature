@@ -15,3 +15,8 @@ Feature: Personal profile
   Scenario: bullshit
     Given I am at user's profile page
     Then I modify my data
+
+  Scenario: Modify user's email
+    Given I am at user's profile page
+    When I enter an invalid email
+    Then The email won't show a data changes' message

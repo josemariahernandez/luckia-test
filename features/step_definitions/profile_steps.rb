@@ -18,6 +18,7 @@ end
 Given(/^unmodifiable information displayed is correct$/) do
   expected_unmodifiable_information = @current.expectedUnmodifiableInformation
   current_unmodifiable_information = @current.currentUnmodifiableInformation
+
   fail "trololo" unless expected_unmodifiable_information==current_unmodifiable_information
 end
 
@@ -28,11 +29,14 @@ Given(/^I am at user's profile page$/) do
   @current = @page.profilePage
 end
 
-When(/^I change the email and email confirmation$/) do
-  @current.enter_email('prueba')
+When(/^I enter an invalid email$/) do
+  email = DATA[:invalid_data]
+  #email = @current.openData('modifiable_information')
+  @current.enter_email(email[:email])
 end
 
 Then(/^the email will be changed in the user's profile$/) do
+  @current.no_exists_message?
 end
 
 Given(/^I modify my data$/) do
